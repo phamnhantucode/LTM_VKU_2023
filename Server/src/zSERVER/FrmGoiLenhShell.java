@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package zSERVER;
 
 import PACKAGES.PacketShell;
@@ -10,10 +6,6 @@ import UTILS.DataUtils;
 import java.awt.event.KeyEvent;
 import java.net.Socket;
 
-/**
- *
- * @author Nguyen minh tien_1601702
- */
 public class FrmGoiLenhShell extends javax.swing.JDialog implements Runnable{
 
     Socket _mayClient;

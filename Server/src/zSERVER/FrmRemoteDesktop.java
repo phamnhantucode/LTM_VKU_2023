@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package zSERVER;
 
 import java.awt.Rectangle;
@@ -10,10 +6,6 @@ import java.net.Socket;
 import zSERVER.REMOTE.ClientCommandsSender;
 import zSERVER.REMOTE.ClientScreenReciever;
 
-/**
- *
- * @author Nguyen minh tien_1601702
- */
 public class FrmRemoteDesktop extends javax.swing.JDialog implements Runnable {
 
     Socket socket;

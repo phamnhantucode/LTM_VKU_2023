@@ -6,10 +6,6 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-/**
- *
- * @author Nguyen minh tien_1601702
- */
 public class DataUtils {
 
     public static String nhanDuLieu(Socket sender) {

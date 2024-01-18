@@ -6,10 +6,6 @@ import java.security.NoSuchAlgorithmException;
 import java.text.*;
 import java.util.Date;
 
-/**
- *
- * @author Nguyen minh tien_1601702
- */
 public class ObjectUtils {
 
     /**

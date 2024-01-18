@@ -95,14 +95,14 @@ public class FrmChupHinhClient extends javax.swing.JDialog implements Runnable {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btnChupHinh.setText("Chụp hình");
+        btnChupHinh.setText("Screenshot");
         btnChupHinh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChupHinhActionPerformed(evt);
             }
         });
 
-        btnLuu.setText("Lưu");
+        btnLuu.setText("Save");
         btnLuu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLuuActionPerformed(evt);
@@ -118,7 +118,7 @@ public class FrmChupHinhClient extends javax.swing.JDialog implements Runnable {
                 .addComponent(btnChupHinh)
                 .addGap(33, 33, 33)
                 .addComponent(btnLuu, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(403, Short.MAX_VALUE))
+                .addContainerGap(404, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

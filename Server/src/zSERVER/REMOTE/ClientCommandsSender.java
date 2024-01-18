@@ -1,7 +1,3 @@
-/*
- *@author Nguyen minh tien_1601702
- */
-
 package zSERVER.REMOTE;
 
 import java.awt.Rectangle;
@@ -15,9 +11,6 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import javax.swing.JPanel;
 
-/**
- * @author Nguyen minh tien_1601702
- */
 public class ClientCommandsSender implements KeyListener,
         MouseMotionListener,MouseListener {
 

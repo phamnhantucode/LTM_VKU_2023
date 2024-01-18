@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package zSERVER;
 
 import java.io.*;
@@ -9,10 +5,6 @@ import java.net.Socket;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Nguyen minh tien_1601702
- */
 public class FrmGoiFile extends javax.swing.JDialog implements Runnable {
 
     Socket socketToClient;
@@ -43,7 +35,7 @@ public class FrmGoiFile extends javax.swing.JDialog implements Runnable {
 
         btnGoi.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         btnGoi.setForeground(new java.awt.Color(255, 0, 0));
-        btnGoi.setText("GỬI");
+        btnGoi.setText("Send");
         btnGoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGoiActionPerformed(evt);
@@ -54,14 +46,14 @@ public class FrmGoiFile extends javax.swing.JDialog implements Runnable {
         txtFile.setForeground(new java.awt.Color(51, 51, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Tập tin:");
+        jLabel1.setText("File:");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Chọn tập tin để gửi");
+        jLabel2.setText("Select file to send");
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 0, 0));
-        jButton2.setText("Tìm");
+        jButton2.setText("Search");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -70,7 +62,8 @@ public class FrmGoiFile extends javax.swing.JDialog implements Runnable {
 
         btnThoat.setBackground(new java.awt.Color(204, 255, 255));
         btnThoat.setForeground(new java.awt.Color(204, 0, 0));
-        btnThoat.setText("HỦY");
+        btnThoat.setSelected(true);
+        btnThoat.setText("Cancel");
         btnThoat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThoatActionPerformed(evt);
@@ -97,7 +90,7 @@ public class FrmGoiFile extends javax.swing.JDialog implements Runnable {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txtFile, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE))))
+                                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -109,10 +102,11 @@ public class FrmGoiFile extends javax.swing.JDialog implements Runnable {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFile, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtFile, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -127,7 +121,7 @@ public class FrmGoiFile extends javax.swing.JDialog implements Runnable {
 
         try {
             if (txtFile.getText().isEmpty()) {
-                JOptionPane.showConfirmDialog(null, "Bạn chưa chọn tập tin để gởi!");
+                JOptionPane.showConfirmDialog(null, "Select file to send!");
                 return;
             }
             File myFile = new File(txtFile.getText());

@@ -48,7 +48,7 @@
                   <Component id="btnChupHinh" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="btnLuu" min="-2" pref="73" max="-2" attributes="0"/>
-                  <EmptySpace pref="403" max="32767" attributes="0"/>
+                  <EmptySpace pref="404" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -68,7 +68,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="btnChupHinh">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ch&#x1ee5;p h&#xec;nh"/>
+            <Property name="text" type="java.lang.String" value="Screenshot"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChupHinhActionPerformed"/>
@@ -76,7 +76,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnLuu">
           <Properties>
-            <Property name="text" type="java.lang.String" value="L&#x1b0;u"/>
+            <Property name="text" type="java.lang.String" value="Save"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLuuActionPerformed"/>

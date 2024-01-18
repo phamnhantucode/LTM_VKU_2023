@@ -4,10 +4,6 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JDialog;
 
-/**
- *
- * @author Nguyen minh tien_1601702
- */
 public class GuiUtils {
     public static void showDialog(JDialog jDialog, boolean model){
         Toolkit tk = Toolkit.getDefaultToolkit();
