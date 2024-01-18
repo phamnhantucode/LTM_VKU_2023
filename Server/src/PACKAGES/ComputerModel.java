@@ -1,9 +1,5 @@
 package PACKAGES;
 
-/**
- *
- * @author Nguyen minh tien_1601702
- */
 public class ComputerModel {
     private String ip;
     private String name;

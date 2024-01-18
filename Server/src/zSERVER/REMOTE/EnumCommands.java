@@ -1,12 +1,5 @@
-
-/*
- * @author Nguyen minh tien_1601702
- */
 package zSERVER.REMOTE;
 
-/**
- * Used to represent commands which can be sent by the server
- */
 public enum EnumCommands {
     PRESS_MOUSE(-1),
     RELEASE_MOUSE(-2),

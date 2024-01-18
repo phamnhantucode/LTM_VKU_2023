@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package zSERVER;
 
 import PACKAGES.PacketChat;
@@ -9,10 +5,6 @@ import PACKAGES.PacketTin;
 import UTILS.DataUtils;
 import java.net.Socket;
 
-/**
- *
- * @author Nguyen minh tien_1601702
- */
 public class FrmChatVoiClient extends javax.swing.JDialog implements Runnable{
 
     boolean isContinued = true;
@@ -71,7 +63,10 @@ public class FrmChatVoiClient extends javax.swing.JDialog implements Runnable{
             }
         });
 
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
+
         txtMessages.setEditable(false);
+        txtMessages.setBackground(new java.awt.Color(255, 255, 255));
         txtMessages.setColumns(20);
         txtMessages.setRows(5);
         jScrollPane1.setViewportView(txtMessages);
@@ -80,8 +75,9 @@ public class FrmChatVoiClient extends javax.swing.JDialog implements Runnable{
         txtInput.setRows(5);
         jScrollPane2.setViewportView(txtInput);
 
+        btnSend.setBackground(new java.awt.Color(204, 255, 255));
         btnSend.setForeground(new java.awt.Color(255, 0, 0));
-        btnSend.setText("Sen to Client");
+        btnSend.setIcon(new javax.swing.ImageIcon(getClass().getResource("/RES/icon_send.png"))); // NOI18N
         btnSend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSendActionPerformed(evt);
@@ -97,9 +93,9 @@ public class FrmChatVoiClient extends javax.swing.JDialog implements Runnable{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSend)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSend, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)

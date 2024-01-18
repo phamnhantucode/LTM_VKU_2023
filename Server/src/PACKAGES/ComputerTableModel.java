@@ -6,13 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author Nguyen minh tien_1601702
- */
 public class ComputerTableModel extends AbstractTableModel {
 
-    String columnNames[] = {"STT", "Tên máy", "IP máy", "Cổng kết nối"};
+    String columnNames[] = {"STT", "Computer name", "IP", "Port"};
     private List<Socket> list;
     private List<ComputerModel> listComputer;
 
