@@ -39,7 +39,7 @@ public class ClientGUI extends javax.swing.JFrame implements Runnable {
             lblClientName.setText(InetAddress.getLocalHost().getHostName()
                     + " (" + InetAddress.getLocalHost().getHostAddress() + ")");
             lblIPAddress.setText(ipServer);
-            lblStatus.setText("Đang chờ kết nối đến server...");
+            lblStatus.setText("Not Connected...");
         } catch (Exception ex) {
         }
     }
@@ -207,14 +207,14 @@ public class ClientGUI extends javax.swing.JFrame implements Runnable {
         int bytesRead;
         InputStream in = socketNhanFile.getInputStream();
         DataInputStream clientData = new DataInputStream(in);
-        System.err.println("C[Nhận File]: bắt đầu chờ nhận file....");
+        System.err.println("C[Get File]: Start waiting to receive files....");
         String fileName = clientData.readUTF();
-        System.err.println("C[Nhận File]: đã thấy tên file: " + fileName);
+        System.err.println("C[Get File]: File name seen: " + fileName);
         String fullPath = chooser.getSelectedFile().getPath() + "\\" + fileName;
          try {
             OutputStream output = new FileOutputStream(fullPath);
      
-            System.err.println("C[Nhận File]: bắt đầu nhận file: " + fileName);
+            System.err.println("C[Get File]: Start receiving files: " + fileName);
             long size = clientData.readLong();
             byte[] buffer = new byte[3024];
             while (size > 0 && (bytesRead =
@@ -226,7 +226,7 @@ public class ClientGUI extends javax.swing.JFrame implements Runnable {
         }catch(Exception ex){
             ex.printStackTrace();
         }
-        System.err.println("C[Nhận File]: đã nhận xong: " + fileName);
+        System.err.println("C[Get File]: Received: " + fileName);
     }
     //</editor-fold>
 
@@ -244,9 +244,8 @@ public class ClientGUI extends javax.swing.JFrame implements Runnable {
         jLabel1 = new javax.swing.JLabel();
         txtIP = new javax.swing.JTextField();
         jButtonConnect = new javax.swing.JButton();
-        lblStatus3 = new javax.swing.JLabel();
-        lblSubnetMask = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -257,125 +256,134 @@ public class ClientGUI extends javax.swing.JFrame implements Runnable {
             }
         });
 
-        lblStatus4.setText("Tên máy:");
+        lblStatus4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblStatus4.setText("Host name");
 
-        lblClientName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblClientName.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblClientName.setForeground(new java.awt.Color(255, 0, 51));
         lblClientName.setText("MyComputer");
 
+        lblStatus1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblStatus1.setText("IP Address:");
 
-        lblIPAddress.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIPAddress.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblIPAddress.setForeground(new java.awt.Color(255, 0, 51));
         lblIPAddress.setText("127.0.0.1");
 
-        lblStatus2.setText("Trạng thái:");
+        lblStatus2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblStatus2.setText("Status");
 
-        lblStatus.setFont(new java.awt.Font("Tahoma", 2, 12)); // NOI18N
+        lblStatus.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         lblStatus.setForeground(new java.awt.Color(255, 0, 51));
         lblStatus.setText("Status");
 
-        btnThoat.setBackground(new java.awt.Color(204, 255, 255));
-        btnThoat.setForeground(new java.awt.Color(204, 0, 0));
-        btnThoat.setText("Thoát");
+        btnThoat.setBackground(new java.awt.Color(255, 0, 51));
+        btnThoat.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
+        btnThoat.setText("Back");
         btnThoat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThoatActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 51));
         jLabel1.setText("IP Server:");
 
+        txtIP.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtIP.setForeground(new java.awt.Color(0, 0, 255));
         txtIP.setText("192.168.0.105");
         txtIP.setMinimumSize(new java.awt.Dimension(8, 22));
+        txtIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIPActionPerformed(evt);
+            }
+        });
 
-        jButtonConnect.setForeground(new java.awt.Color(255, 0, 0));
-        jButtonConnect.setText("Kết nối");
+        jButtonConnect.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonConnect.setText("Connect");
         jButtonConnect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonConnectActionPerformed(evt);
             }
         });
 
-        lblStatus3.setText("Subnet Mask:");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setText("WELCOME TO MANAGER LAN NETWORK");
 
-        lblSubnetMask.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblSubnetMask.setForeground(new java.awt.Color(255, 0, 51));
-        lblSubnetMask.setText("...");
-
-        jButton1.setText("Quét IP");
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\TechCare\\Downloads\\rsz_teamviewer_logo.png")); // NOI18N
+        jLabel3.setText("jLabel3");
+        jLabel3.setMinimumSize(new java.awt.Dimension(37, 30));
+        jLabel3.setName(""); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblStatus2)
-                                    .addComponent(lblStatus1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblStatus4)
-                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(25, 25, 25)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblClientName, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblIPAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(130, 130, 130)
-                                .addComponent(txtIP, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButtonConnect)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(lblStatus3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblStatus1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblStatus4)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblClientName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(lblStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
-                            .addComponent(lblSubnetMask, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblIPAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtIP, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 29, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblStatus2)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(jButtonConnect, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(txtIP, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButtonConnect))
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblClientName)
-                    .addComponent(lblStatus4, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtIP, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblStatus4)
+                            .addComponent(lblClientName))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblStatus1)
+                            .addComponent(lblIPAddress))
+                        .addGap(11, 11, 11)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblStatus2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblStatus))
+                        .addGap(5, 5, 5))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblStatus1)
-                    .addComponent(lblIPAddress))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblStatus3, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblSubnetMask))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblStatus2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblStatus))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(btnThoat))
+                    .addComponent(jButtonConnect, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -386,11 +394,11 @@ public class ClientGUI extends javax.swing.JFrame implements Runnable {
         ipServer = txtIP.getText();
         try {
             // Khởi tạo kết nối từ Client đến Server
-            lblStatus.setText("Đang chờ kết nối đến server...");
+            lblStatus.setText("Wait server accept...");
             socketFromServer = new Socket(ipServer, mainPortServer);
-            lblStatus.setText("Đã kết nối server thành công.");
+            lblStatus.setText("Connect succesfull.");
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Không thể kết nối với server!");
+            JOptionPane.showMessageDialog(null, "Can not connect with server!");
         }
     }//GEN-LAST:event_jButtonConnectActionPerformed
 
@@ -401,19 +409,23 @@ public class ClientGUI extends javax.swing.JFrame implements Runnable {
     private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
         dispose();
     }//GEN-LAST:event_btnThoatActionPerformed
+
+    private void txtIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIPActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnThoat;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonConnect;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblClientName;
     private javax.swing.JLabel lblIPAddress;
     private javax.swing.JLabel lblStatus;
     private javax.swing.JLabel lblStatus1;
     private javax.swing.JLabel lblStatus2;
-    private javax.swing.JLabel lblStatus3;
     private javax.swing.JLabel lblStatus4;
-    private javax.swing.JLabel lblSubnetMask;
     private javax.swing.JTextField txtIP;
     // End of variables declaration//GEN-END:variables
 }

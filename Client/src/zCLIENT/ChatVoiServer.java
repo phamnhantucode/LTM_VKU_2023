@@ -50,7 +50,7 @@ public class ChatVoiServer extends javax.swing.JDialog {
         jScrollPane2.setViewportView(txtInput);
 
         btnSend.setForeground(new java.awt.Color(255, 0, 51));
-        btnSend.setText("GỬI");
+        btnSend.setText("SEND");
         btnSend.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSendActionPerformed(evt);

@@ -6,7 +6,6 @@ import javax.swing.JDialog;
 
 /**
  *
- * @author Nguyen minh tien_1601702
  */
 public class GuiUtils {
     public static void showDialog(JDialog jDialog, boolean model){

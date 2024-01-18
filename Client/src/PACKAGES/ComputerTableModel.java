@@ -8,7 +8,6 @@ import javax.swing.table.AbstractTableModel;
 
 /**
  *
- * @author Nguyen minh tien_1601702
  */
 public class ComputerTableModel extends AbstractTableModel {
 
