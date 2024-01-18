@@ -73,7 +73,11 @@ public class FrmGoiLenhShell extends javax.swing.JDialog implements Runnable{
 
         txtInput.setBackground(new java.awt.Color(204, 255, 204));
         txtInput.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        txtInput.setForeground(new java.awt.Color(255, 255, 255));
+        txtInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtInputActionPerformed(evt);
+            }
+        });
         txtInput.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtInputKeyReleased(evt);
@@ -107,6 +111,10 @@ public class FrmGoiLenhShell extends javax.swing.JDialog implements Runnable{
         DataUtils.goiDuLieu(_mayClient,_pkShell.toString());
        }
     }//GEN-LAST:event_txtInputKeyReleased
+
+    private void txtInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtInputActionPerformed
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

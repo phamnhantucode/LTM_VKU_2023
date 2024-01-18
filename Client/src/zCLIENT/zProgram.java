@@ -6,7 +6,6 @@ package zCLIENT;
 
 /**
  *
- * @author Nguyen minh tien_1601702
  */
 public class zProgram {
 
