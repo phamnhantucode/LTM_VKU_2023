@@ -1,17 +1,9 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package zSERVER;
 
 import java.io.ObjectInputStream;
 import java.net.Socket;
 import zSERVER.REMOTE.ClientScreenReciever;
 
-/**
- *
- * @author Nguyen minh tien_1601702
- */
 public class FrmTheoDoiClient extends javax.swing.JDialog implements Runnable {
 
     Socket socket;

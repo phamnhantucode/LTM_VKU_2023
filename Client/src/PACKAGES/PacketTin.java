@@ -1,5 +1,10 @@
 package PACKAGES;
 
+import UTILS.EncryptionServiceAESGCM;
+import java.security.GeneralSecurityException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Nguyen minh tien_1601702
@@ -9,8 +14,14 @@ public class PacketTin {
     private String id;
     private String cmd;
     private String message;
+    private EncryptionServiceAESGCM secureService;
 
     public PacketTin() {
+        try {
+            secureService = new EncryptionServiceAESGCM("");
+        } catch (GeneralSecurityException ex) {
+            Logger.getLogger(PacketTin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public boolean isId(String id) {
@@ -27,39 +38,50 @@ public class PacketTin {
     }
 
     public void phanTichMessage(String strReceived) {
-        // Gói tin dạng: id:chatclient###cmd:start###msg:Hello World!
-        // Lấy 3 phần đầu của gói cách nhau bởi ###
-        String[] msgSplit = strReceived.split("###", 3);
-        if (msgSplit.length != 3) {
-            id = message = cmd = "";
-            return;
-        }
-        // Lấy ID từ phần thứ nhất của gói
-        String idPkg = msgSplit[0].trim();
-        if (idPkg.startsWith("id:")) {
-            id = idPkg.replaceFirst("id:", "");
-        } else {
-            id = "inf";
-        }
-        // Lấy message từ phần tứ 2 của gói
-        String cmdPkg = msgSplit[1].trim();
-        if (cmdPkg.startsWith("cmd:")) {
-            cmd = cmdPkg.replaceFirst("cmd:", "");
-        } else {
-            cmd = "";
-        }
-        // Lấy message từ phần tứ 3 của gói
-        String msgPkg = msgSplit[2].trim();
-        if (msgPkg.startsWith("msg:")) {
-            message = msgPkg.replaceFirst("msg:", "");
-        } else {
-            message = "";
+        try {
+            // Gói tin dạng: id:chatclient###cmd:start###msg:Hello World!
+            // Lấy 3 phần đầu của gói cách nhau bởi ###
+            System.out.println(secureService.decrypt(strReceived.trim()));
+            String[] msgSplit;
+            msgSplit = secureService.decrypt(strReceived.trim()).split("###", 3);
+            if (msgSplit.length != 3) {
+                id = message = cmd = "";
+                return;
+            }
+            // Lấy ID từ phần thứ nhất của gói
+            String idPkg = msgSplit[0].trim();
+            if (idPkg.startsWith("id:")) {
+                id = idPkg.replaceFirst("id:", "");
+            } else {
+                id = "inf";
+            }
+            // Lấy message từ phần tứ 2 của gói
+            String cmdPkg = msgSplit[1].trim();
+            if (cmdPkg.startsWith("cmd:")) {
+                cmd = cmdPkg.replaceFirst("cmd:", "");
+            } else {
+                cmd = "";
+            }
+            // Lấy message từ phần tứ 3 của gói
+            String msgPkg = msgSplit[2].trim();
+            if (msgPkg.startsWith("msg:")) {
+                message = msgPkg.replaceFirst("msg:", "");
+            } else {
+                message = "";
+            }
+        } catch (GeneralSecurityException ex) {
+            Logger.getLogger(PacketTin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     @Override
     public String toString() {
-        return String.format("id:%s###cmd:%s###msg:%s", getId(), getCmd(), getMessage());
+        try {
+            return secureService.encrypt(String.format("id:%s###cmd:%s###msg:%s", getId(), getCmd(), getMessage()));
+        } catch (GeneralSecurityException ex) {
+            Logger.getLogger(PacketTin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "";
     }
 
     /**

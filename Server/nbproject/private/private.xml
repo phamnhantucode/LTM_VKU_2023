@@ -4,28 +4,31 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/UTILS/ObjectUtils.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/PACKAGES/PacketTheoDoiClient.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/REMOTE/ClientScreenCapture.java</file>
-            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/FrmRemoteDesktop.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/REMOTE/ClientCommandsSender.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/zProgram.java</file>
-            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/REMOTE/EnumCommands.java</file>
-            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/PACKAGES/PacketTin.java</file>
-            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/FrmGoiLenhShell.java</file>
-            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/PACKAGES/PacketShell.java</file>
-            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/PACKAGES/PacketRemoteDesktop.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/RES/tracking-computer.png</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/FrmGoiFile.java</file>
-            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/UTILS/DataUtils.java</file>
-            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/FrmTheoDoiClient.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/FrmChupHinhClient.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/REMOTE/ClientScreenReciever.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/UTILS/GuiUtils.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/PACKAGES/ComputerModel.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/PACKAGES/PacketChat.java</file>
-            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/FrmServerGUI.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/FrmGoiThongDiep.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/FrmChatVoiClient.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/PACKAGES/PacketThongDiep.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/UTILS/ObjectUtils.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/FrmRemoteDesktop.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/REMOTE/EnumCommands.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/PACKAGES/PacketTin.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/FrmGoiLenhShell.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/PACKAGES/PacketShell.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/PACKAGES/PacketRemoteDesktop.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/UTILS/DataUtils.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/FrmTheoDoiClient.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/PACKAGES/PacketChupAnh.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/zSERVER/FrmServerGUI.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Server/src/PACKAGES/ComputerTableModel.java</file>
         </group>
     </open-files>
