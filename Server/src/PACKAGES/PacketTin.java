@@ -1,9 +1,9 @@
 package PACKAGES;
 
+import UTILS.EncryptionServiceAESGCM;
 import java.security.GeneralSecurityException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import utils.EncryptionServiceAESGCM;
 
 public class PacketTin {
 
@@ -37,9 +37,8 @@ public class PacketTin {
         try {
             // Gói tin dạng: id:chatclient###cmd:start###msg:Hello World!
             // Lấy 3 phần đầu của gói cách nhau bởi ###
-
-            String[] msgSplit;
             
+            String[] msgSplit;
             msgSplit = secureService.decrypt(strReceived.trim()).split("###", 3);
             if (msgSplit.length != 3) {
                 id = message = cmd = "";

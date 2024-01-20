@@ -5,10 +5,6 @@ import java.security.GeneralSecurityException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Nguyen minh tien_1601702
- */
 public class PacketTin {
 
     private String id;

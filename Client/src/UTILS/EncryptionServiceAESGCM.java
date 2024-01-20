@@ -20,25 +20,27 @@ public class EncryptionServiceAESGCM {
     }
 
     public String encrypt(String original) throws GeneralSecurityException {
-        byte[] iv = new byte[16]; // Initialization Vector
-        SecureRandom random = new SecureRandom();
-        random.nextBytes(iv); // Generate a random IV
-        cipher.init(Cipher.ENCRYPT_MODE, secretKey, new GCMParameterSpec(128, iv));
-        byte[] encryptedData = cipher.doFinal(original.getBytes(StandardCharsets.UTF_8));
-        Base64.Encoder encoder = Base64.getEncoder();
-        String encrypt64 = encoder.encodeToString(encryptedData);
-        String iv64 = encoder.encodeToString(iv);
-        return encrypt64 + "#" + iv64;
+//        byte[] iv = new byte[16]; // Initialization Vector
+//        SecureRandom random = new SecureRandom();
+//        random.nextBytes(iv); // Generate a random IV
+//        cipher.init(Cipher.ENCRYPT_MODE, secretKey, new GCMParameterSpec(128, iv));
+//        byte[] encryptedData = cipher.doFinal(original.getBytes(StandardCharsets.UTF_8));
+//        Base64.Encoder encoder = Base64.getEncoder();
+//        String encrypt64 = encoder.encodeToString(encryptedData);
+//        String iv64 = encoder.encodeToString(iv);
+//        return encrypt64 + "#" + iv64;
+        return original;
     }
 
     public String decrypt(String cipherText) throws GeneralSecurityException {
-        String[] split = cipherText.split("#");
-        Base64.Decoder decoder = Base64.getDecoder();
-        byte[] cypherTextBytes = decoder.decode(split[0]);
-        byte[] iv = decoder.decode(split[1]);
-        GCMParameterSpec paraSpec = new GCMParameterSpec(128, iv);
-        cipher.init(Cipher.DECRYPT_MODE, secretKey, paraSpec);
-        byte[] decryptedData = cipher.doFinal(cypherTextBytes);
-        return new String(decryptedData, StandardCharsets.UTF_8);
+//        String[] split = cipherText.split("#");
+//        Base64.Decoder decoder = Base64.getDecoder();
+//        byte[] cypherTextBytes = decoder.decode(split[0]);
+//        byte[] iv = decoder.decode(split[1]);
+//        GCMParameterSpec paraSpec = new GCMParameterSpec(128, iv);
+//        cipher.init(Cipher.DECRYPT_MODE, secretKey, paraSpec);
+//        byte[] decryptedData = cipher.doFinal(cypherTextBytes);
+//        return new String(decryptedData, StandardCharsets.UTF_8);
+        return cipherText;
     }
 }

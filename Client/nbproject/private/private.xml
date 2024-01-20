@@ -5,8 +5,23 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/zCLIENT/ClientGUI.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/PACKAGES/ComputerModel.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/zCLIENT/zProgram.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/PACKAGES/PacketTin.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/PACKAGES/ComputerTableModel.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/PACKAGES/PacketTruyenFile.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/PACKAGES/PacketThongDiep.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/UTILS/DataUtils.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/UTILS/GuiUtils.java</file>
             <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/zCLIENT/ScreenCapture.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/PACKAGES/PacketRemoteDesktop.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/PACKAGES/PacketShell.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/zCLIENT/NhanThongDiep.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/PACKAGES/PacketTheoDoiClient.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/UTILS/EncryptionServiceAESGCM.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/UTILS/ObjectUtils.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/PACKAGES/PacketChupAnh.java</file>
+            <file>file:/D:/Study/University/Term1_2023_2024/Network%20Programing/New%20folder%20(2)/Client/src/PACKAGES/PacketChat.java</file>
         </group>
     </open-files>
 </project-private>
