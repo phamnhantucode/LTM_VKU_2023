@@ -16,10 +16,6 @@ import javax.swing.JOptionPane;
 import zCLIENT.REMOTE.GoiManHinh;
 import zCLIENT.REMOTE.ThaoTacManHinh;
 
-/**
- *
- * @author Nguyen minh tien_1601702
- */
 public class ClientGUI extends javax.swing.JFrame implements Runnable {
 
     Socket socketFromServer;
@@ -27,7 +23,7 @@ public class ClientGUI extends javax.swing.JFrame implements Runnable {
     NhanThongDiep dialogNhanTDiep;
     boolean continueThread = true;
     String ipServer;
-    final int mainPortServer = 999;
+    final int mainPortServer = 1999;
     Socket socketNhanFile;
     ScreenCapture screenCapture;
     
@@ -62,6 +58,7 @@ public class ClientGUI extends javax.swing.JFrame implements Runnable {
     private void xuLyDuLieuTrungTam(String msg) throws UnknownHostException, IOException {
         PacketTin pkTin = new PacketTin();
         pkTin.phanTichMessage(msg);
+        System.out.println(pkTin.toString());
         // Thực hiện các câu lệnh từ Server
         if (pkTin.isId(PacketChat.ID)) {
             if (dialogChatServer == null) {

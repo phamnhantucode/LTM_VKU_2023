@@ -10,6 +10,7 @@ public class FrmGoiFile extends javax.swing.JDialog implements Runnable {
     Socket socketToClient;
 
     public FrmGoiFile(Socket mayKhach) {
+        System.out.println("SOS");
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);

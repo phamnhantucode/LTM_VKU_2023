@@ -19,10 +19,10 @@ import javax.swing.JOptionPane;
  */
 public class FrmServerGUI extends javax.swing.JFrame implements Runnable {
     
-    private final int mainThreadPortNumber = 999;
-    private final int remoteDesktopThreadPortNumber = 998;
-    private final int theoDoiClientThreadPortNumber = 997;
-    private final int fileTransferThreadPortNumber = 996;
+    private final int mainThreadPortNumber = 1999;
+    private final int remoteDesktopThreadPortNumber = 11998;
+    private final int theoDoiClientThreadPortNumber = 11997;
+    private final int fileTransferThreadPortNumber = 11996;
     
     Timer timerUpdateListSocket;
     private int timeUpdateTable = 5; // second
